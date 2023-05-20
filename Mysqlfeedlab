@@ -3,7 +3,7 @@
 #Import pymysql module library
 import pymysql
 #Create a connection to MySQL Database 
-conn =pymysql.connect(database="databasename",user="pi",password="raspberry",host="localhost")
+conn =pymysql.connect(database="Iot-2023",user="pi",password="raspberry",host="localhost")
 #Create a MySQL Cursor to that executes the SQLs
 cur=conn.cursor()
 #Create a dictonary containing the fields, topic, sensor values and Remarks
