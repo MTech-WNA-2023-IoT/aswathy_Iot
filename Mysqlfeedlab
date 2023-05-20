@@ -9,7 +9,7 @@ cur=conn.cursor()
 #Create a dictonary containing the fields, topic, sensor values and Remarks
 data={'Topic':'Soil Moisture sensor','Sensor values':500,'place':'Soil is humid'}
 #Execute the SQL to write data to the database
-cur.execute("INSERT INTO <tablename>(Topic, Sensor values, Remarks)VALUES(%(Topic)s,%(Sensor values)s,%(Remarks)s);",data)
+cur.execute("INSERT INTO <sensordata>(Topic, Sensor values, Remarks)VALUES(%(Topic)s,%(Sensor values)s,%(Remarks)s);",data)
 #Close the cursor
 cur.close()
 #Commit the data to the database
