@@ -6,13 +6,13 @@ import requests
 # MQTT broker settings
 broker_address = "0.0.0.0"
 broker_port = 1883
-mqtt_topic = "soilph"
+mqtt_topic = "soilmodeling"
 
 # MySQL database settings
 mysql_host = "0.0.0.0"
 mysql_user = "pi"
 mysql_password = "raspberry"
-mysql_database = "TProject"
+mysql_database = "myProject"
 
 # Weather API settings
 weather_api_key = "YOUR_WEATHER_API_KEY"
@@ -67,12 +67,11 @@ def on_message(client, userdata, msg):
             cursor = db.cursor()
 
             # Insert the received data into the table
-            query = "INSERT INTO soil_ph (`Moisture Value`, `pH Value`, Temperature, Humidity) VALUES (%s, %s, %s, %s)"
+            query = "INSERT INTO soilmodeling (`Moisture Value`, `pH Value`) VALUES (%s, %s)"
             values = (
                 json_data["Moisture Value"],
                 json_data["pH Value"],
-                json_data["Temperature"],
-                json_data["Humidity"]
+               
             )
             cursor.execute(query, values)
 
