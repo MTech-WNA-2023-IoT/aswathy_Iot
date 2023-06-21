@@ -37,7 +37,7 @@ def on_message(client, userdata, msg):
         cursor = db.cursor()
        
         # Insert the received data into the table
-        query = "INSERT INTO soil_ph (Moisture Value,pH Value) VALUES (%s, %s)"
+        query = "INSERT INTO soil_ph (Moisture_value,ph_value) VALUES (%s, %s)"
         values = (
             json_data["Moisture Value"],
             json_data["pH Value"],
